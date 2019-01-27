@@ -13,6 +13,7 @@ import { Context } from "../context"
 import {
   DO_AUTH_URI,
   DO_CLIENT_ID,
+  DO_CLIENT_SECRET,
   DO_REDIRECT_URI,
 } from "../../config"
 
@@ -54,20 +55,35 @@ class Connect extends Component {
     const { setToken, setScreen } = this.context
     const { setState } = this
 
-    const matches = url.match(/code=(.*)$/)
+    const matchedCode = url.match(/code=(.*)$/)
 
-    if (matches) {
-      const token = matches[1]
+    if (matchedCode) {
+      const code = matchedCode[1]
 
-      await AsyncStorage.setItem("token", token)
+      const formattedUrl = `https://cloud.digitalocean.com/v1/oauth/token?grant_type=authorization_code&code=${code}&client_id=${DO_CLIENT_ID}&client_secret=${DO_CLIENT_SECRET}&redirect_uri=${DO_REDIRECT_URI}`
 
-      setToken(token)
-      setScreen("Overview")
-    } else {
-      setState.call(this, {
-        error: "Could not connect, please try again",
+      console.log("(mint)", formattedUrl)
+
+      const response = await fetch(formattedUrl, {
+        method: "POST",
       })
+
+      const result = await response.json()
+
+      if (result.access_token) {
+        const token = result.access_token
+
+        await AsyncStorage.setItem("token", token)
+
+        setToken(token)
+        setScreen("Overview")
+        return
+      }
     }
+
+    setState.call(this, {
+      error: "Could not connect, please try again",
+    })
   }
 
   onPressConnect = () => {
