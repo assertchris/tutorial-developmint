@@ -155,6 +155,63 @@ class App extends Component {
       // ...refresh the list
       await getDroplets()
     },
+    sizes: [],
+    isLoadingSizes: false,
+    getSizes: async () => {
+      const { token } = this.state
+
+      this.setState({ isLoadingSizes: true })
+
+      const response = await request(
+        token,
+        "GET",
+        `${DO_PREFIX}/sizes`,
+      )
+
+      const result = await response.json()
+
+      this.setState({
+        sizes: result.sizes,
+        isLoadingSizes: false,
+      })
+    },
+    regions: [],
+    isLoadingRegions: false,
+    getRegions: async () => {
+      const { token } = this.state
+
+      this.setState({ isLoadingRegions: true })
+
+      const response = await request(
+        token,
+        "GET",
+        `${DO_PREFIX}/regions`,
+      )
+
+      const result = await response.json()
+
+      this.setState({
+        regions: result.regions,
+        isLoadingRegions: false,
+      })
+    },
+    createDroplet: async (name, snapshot, size, region) => {
+      const { token, setScreen } = this.state
+
+      await request(
+        token,
+        "POST",
+        `${DO_PREFIX}/droplets`,
+        {
+          name,
+          region: region.slug,
+          size: size.slug,
+          image: snapshot.id,
+        },
+      )
+
+      setScreen("Overview")
+    },
   }
 
   async componentDidMount() {

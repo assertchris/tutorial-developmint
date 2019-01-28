@@ -1,9 +1,11 @@
 import React, { Component } from "react"
 import { ScrollView } from "react-native"
+import { Icons } from "react-native-fontawesome"
 
 import { Context } from "../context"
 
 import {
+  Block,
   Blocks,
   Droplet,
   Header,
@@ -62,6 +64,11 @@ class Overview extends Component {
     )
   }
 
+  onPressCreateDroplet = () => {
+    const { setScreen } = this.context
+    setScreen("CreateDroplet")
+  }
+
   render() {
     const {
       droplets,
@@ -70,6 +77,8 @@ class Overview extends Component {
       isLoadingSnapshots,
     } = this.context
 
+    const { onPressCreateDroplet } = this
+
     return (
       <ScrollView
         style={styles.containerOuter}
@@ -77,6 +86,7 @@ class Overview extends Component {
       >
         <Header>Droplets</Header>
         <Blocks>
+          <Block onPress={onPressCreateDroplet} />
           {isLoadingDroplets ? (
             <Loading>Loading droplets...</Loading>
           ) : (

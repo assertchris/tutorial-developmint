@@ -21,6 +21,12 @@ const styles = {
     borderRadius: 4,
     backgroundColor: "#f0f0f0",
   },
+  blockHighlight: {
+    borderColor: "blue",
+  },
+  blockDisabled: {
+    opacity: 0.5,
+  },
   blockLabel: {
     width: "100%",
     flexShrink: 1,
@@ -34,27 +40,67 @@ const styles = {
   },
 }
 
-const Block = ({ children, label, onPress }) => (
-  <TouchableWithoutFeedback onPress={onPress}>
-    <View style={styles.block}>
-      {label ? (
-        <View style={styles.blockLabelText}>
-          <Text style={styles.blockLabelText}>{label}</Text>
-        </View>
-      ) : null}
-      {children}
-    </View>
-  </TouchableWithoutFeedback>
-)
+const Block = ({
+  children,
+  label,
+  onPress,
+  isHighlighted,
+  isDisabled,
+}) => {
+  let blockStyles = {
+    ...styles.block,
+  }
+
+  if (isHighlighted) {
+    blockStyles = {
+      ...blockStyles,
+      ...styles.blockHighlight,
+    }
+  }
+
+  if (isDisabled) {
+    blockStyles = {
+      ...blockStyles,
+      ...styles.blockDisabled,
+    }
+  }
+
+  return (
+    <TouchableWithoutFeedback
+      onPress={() => {
+        if (!isDisabled) {
+          if (onPress) {
+            onPress()
+          }
+        }
+      }}
+    >
+      <View style={blockStyles}>
+        {label ? (
+          <View style={styles.blockLabelText}>
+            <Text style={styles.blockLabelText}>
+              {label}
+            </Text>
+          </View>
+        ) : null}
+        {children}
+      </View>
+    </TouchableWithoutFeedback>
+  )
+}
 
 Block.propTypes = {
   label: PropTypes.string,
   onPress: PropTypes.func,
+  isHighlighted: PropTypes.bool,
+  isDisabled: PropTypes.bool,
 }
 
 Block.defaultProps = {
   label: undefined,
   onPress: undefined,
+  isHighlighted: false,
+  isDisabled: false,
 }
 
 export { Block }
