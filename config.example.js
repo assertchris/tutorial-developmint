@@ -1,3 +1,5 @@
+export const DO_PREFIX = "https://api.digitalocean.com/v2"
+
 export const DO_AUTH_URI =
   "https://cloud.digitalocean.com/v1/oauth/authorize"
 

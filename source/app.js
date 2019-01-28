@@ -3,6 +3,8 @@ import { AsyncStorage, View } from "react-native"
 
 import Screens from "./screens"
 import { Context } from "./context"
+import { DropletSnapshotPrompt } from "./components"
+import { DO_PREFIX } from "../config"
 
 const styles = {
   container: {
@@ -34,7 +36,7 @@ const request = async (token, method, url, data = {}) => {
 
   if (method === "POST") {
     Object.keys(data).forEach(key => {
-      formData.append(key, data[key])
+      formattedBody.append(key, data[key])
     })
 
     parameters.body = formattedBody
@@ -63,7 +65,7 @@ class App extends Component {
       const response = await request(
         token,
         "GET",
-        "https://api.digitalocean.com/v2/droplets",
+        `${DO_PREFIX}/droplets`,
       )
 
       const result = await response.json()
@@ -79,27 +81,57 @@ class App extends Component {
     },
     snapshots: [],
     isLoadingSnapshots: false,
+    isCreatingSnapshot: false,
     getSnapshots: async () => {
-      const { token } = this.state
+      const { token, snapshots } = this.state
 
       this.setState({ isLoadingSnapshots: true })
 
       const response = await request(
         token,
         "GET",
-        "https://api.digitalocean.com/v2/snapshots",
+        `${DO_PREFIX}/snapshots`,
       )
 
       const result = await response.json()
 
-      this.setState({
+      const newState = {
         snapshots: result.snapshots,
         isLoadingSnapshots: false,
-      })
+      }
+
+      if (result.snapshots.length !== snapshots.length) {
+        newState.isCreatingSnapshot = false
+      }
+
+      this.setState(newState)
     },
     selectedSnapshot: undefined,
     setSelectedSnapshot: selectedSnapshot => {
       this.setState({ selectedSnapshot })
+    },
+    isCreatingSnapshotOf: undefined,
+    setIsCreatingSnapshotOf: isCreatingSnapshotOf => {
+      this.setState({ isCreatingSnapshotOf })
+    },
+    createSnapshot: async (droplet, snapshotName) => {
+      const { token } = this.state
+
+      this.setState({ isCreatingSnapshot: true })
+
+      const response = await request(
+        token,
+        "POST",
+        `${DO_PREFIX}/droplets/${droplet.id}/actions`,
+        {
+          type: "snapshot",
+          name: snapshotName,
+        },
+      )
+
+      const result = await response.json()
+
+      console.log("(mint)", JSON.stringify(result))
     },
   }
 
@@ -115,7 +147,13 @@ class App extends Component {
 
   render() {
     const { state } = this
-    const { screen } = state
+
+    const {
+      screen,
+      isCreatingSnapshotOf,
+      setIsCreatingSnapshotOf,
+      createSnapshot,
+    } = state
 
     const Screen = Screens[screen]
 
@@ -123,6 +161,22 @@ class App extends Component {
       <View style={styles.container}>
         <Context.Provider value={state}>
           <Screen />
+          <DropletSnapshotPrompt
+            isVisible={isCreatingSnapshotOf !== undefined}
+            onChangeText={name => {
+              this.snapshotName = name
+            }}
+            onCancel={() => {
+              setIsCreatingSnapshotOf(undefined)
+            }}
+            onSubmit={() => {
+              createSnapshot(
+                isCreatingSnapshotOf,
+                this.snapshotName,
+              )
+              setIsCreatingSnapshotOf(undefined)
+            }}
+          />
         </Context.Provider>
       </View>
     )

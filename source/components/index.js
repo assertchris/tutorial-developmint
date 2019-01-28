@@ -3,6 +3,7 @@ import { Block } from "./block"
 import { Blocks } from "./blocks"
 import { Droplet } from "./droplet"
 import { DropletActions } from "./droplet-actions"
+import { DropletSnapshotPrompt } from "./droplet-snapshot-prompt"
 import { Header } from "./header"
 import { IconButton } from "./icon-button"
 import { Loading } from "./loading"
@@ -15,6 +16,7 @@ export {
   Blocks,
   Droplet,
   DropletActions,
+  DropletSnapshotPrompt,
   Header,
   IconButton,
   Loading,

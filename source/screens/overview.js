@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Alert, ScrollView } from "react-native"
+import { ScrollView } from "react-native"
 
 import { Context } from "../context"
 
@@ -11,6 +11,8 @@ import {
   Snapshot,
 } from "../components"
 
+import { confirm } from "../helpers"
+
 const styles = {
   containerOuter: {
     backgroundColor: "#fff",
@@ -21,22 +23,6 @@ const styles = {
     alignItems: "flex-start",
     justifyContent: "center",
   },
-}
-
-const cancelButton = () => ({
-  text: "Cancel",
-  style: "cancel",
-})
-
-const okButton = onPress => ({
-  text: "Ok",
-  onPress,
-})
-
-const confirm = (title, description, buttons) => {
-  Alert.alert(title, description, buttons, {
-    cancelable: false,
-  })
 }
 
 class Overview extends Component {
@@ -53,18 +39,13 @@ class Overview extends Component {
     confirm(
       `Delete ${name}`,
       `Are you sure you want to delete ${name}?`,
-      [cancelButton(), okButton(() => alert("<delete>"))],
+      () => alert("<delete>"),
     )
   }
 
   onPressSnapshotDroplet = droplet => {
-    const name = droplet.name
-
-    confirm(
-      `Delete ${name}`,
-      `Are you sure you want to create a snapshot of ${name}?`,
-      [cancelButton(), okButton(() => alert("<snapshot>"))],
-    )
+    const { setIsCreatingSnapshotOf } = this.context
+    setIsCreatingSnapshotOf(droplet)
   }
 
   onPressDeleteSnapshot = snapshot => {
@@ -73,7 +54,7 @@ class Overview extends Component {
     confirm(
       `Delete ${name}`,
       `Are you sure you want to delete ${name}?`,
-      [cancelButton(), okButton(() => alert("<delete>"))],
+      () => alert("<delete>"),
     )
   }
 

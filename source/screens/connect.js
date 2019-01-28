@@ -62,8 +62,6 @@ class Connect extends Component {
 
       const formattedUrl = `https://cloud.digitalocean.com/v1/oauth/token?grant_type=authorization_code&code=${code}&client_id=${DO_CLIENT_ID}&client_secret=${DO_CLIENT_SECRET}&redirect_uri=${DO_REDIRECT_URI}`
 
-      console.log("(mint)", formattedUrl)
-
       const response = await fetch(formattedUrl, {
         method: "POST",
       })
