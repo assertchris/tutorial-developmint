@@ -1,73 +1,154 @@
 import React, { Component } from "react"
-import { Text, View } from "react-native"
+import { Alert, ScrollView } from "react-native"
 
 import { Context } from "../context"
 
+import {
+  Blocks,
+  Droplet,
+  Header,
+  Loading,
+  Snapshot,
+} from "../components"
+
 const styles = {
-  container: {
+  containerOuter: {
     backgroundColor: "#fff",
     flex: 1,
-    flexDirection: "row",
-    flexWrap: 1,
-    alignItems: "center",
+  },
+  containerInner: {
+    padding: 125,
+    alignItems: "flex-start",
     justifyContent: "center",
   },
-  droplet: {
-    width: 200,
-    height: 200,
-    flexShrink: 1,
-    padding: 10,
-    margin: 5,
-    borderWidth: 1,
-    borderColor: "#e0e0e0",
-    borderRadius: 4,
-    backgroundColor: "#f0f0f0",
-  },
-  dropletName: {
-    width: "100%",
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  dropletNameText: {
-    textAlign: "center",
-    lineHeight: 27,
-    fontSize: 18,
-  },
+}
+
+const cancelButton = () => ({
+  text: "Cancel",
+  style: "cancel",
+})
+
+const okButton = onPress => ({
+  text: "Ok",
+  onPress,
+})
+
+const confirm = (title, description, buttons) => {
+  Alert.alert(title, description, buttons, {
+    cancelable: false,
+  })
 }
 
 class Overview extends Component {
   static contextType = Context
 
   async componentDidMount() {
-    const { getDroplets } = this.context
+    const { getDroplets, getSnapshots } = this.context
+    await Promise.all([getDroplets(), getSnapshots()])
+  }
 
-    await getDroplets()
+  onPressDeleteDroplet = droplet => {
+    const name = droplet.name
+
+    confirm(
+      `Delete ${name}`,
+      `Are you sure you want to delete ${name}?`,
+      [cancelButton(), okButton(() => alert("<delete>"))],
+    )
+  }
+
+  onPressSnapshotDroplet = droplet => {
+    const name = droplet.name
+
+    confirm(
+      `Delete ${name}`,
+      `Are you sure you want to create a snapshot of ${name}?`,
+      [cancelButton(), okButton(() => alert("<snapshot>"))],
+    )
+  }
+
+  onPressDeleteSnapshot = snapshot => {
+    const name = snapshot.name
+
+    confirm(
+      `Delete ${name}`,
+      `Are you sure you want to delete ${name}?`,
+      [cancelButton(), okButton(() => alert("<delete>"))],
+    )
   }
 
   render() {
-    const { droplets, isLoadingDroplets } = this.context
+    const {
+      droplets,
+      isLoadingDroplets,
+      snapshots,
+      isLoadingSnapshots,
+    } = this.context
 
     return (
-      <View style={styles.container}>
-        {isLoadingDroplets ? (
-          <Text>Loading droplets...</Text>
-        ) : (
-          droplets.map(this.renderDroplet)
-        )}
-      </View>
+      <ScrollView
+        style={styles.containerOuter}
+        contentContainerStyle={styles.containerInner}
+      >
+        <Header>Droplets</Header>
+        <Blocks>
+          {isLoadingDroplets ? (
+            <Loading>Loading droplets...</Loading>
+          ) : (
+            droplets.map(this.renderDroplet)
+          )}
+        </Blocks>
+        <Header>Snapshots</Header>
+        <Blocks>
+          {isLoadingSnapshots ? (
+            <Loading>Loading snapshots...</Loading>
+          ) : (
+            snapshots.map(this.renderSnapshot)
+          )}
+        </Blocks>
+      </ScrollView>
     )
   }
 
   renderDroplet = droplet => {
+    const {
+      selectedDroplet,
+      setSelectedDroplet,
+    } = this.context
+
+    const {
+      onPressDeleteDroplet,
+      onPressSnapshotDroplet,
+    } = this
+
     return (
-      <View key={droplet.id} style={styles.droplet}>
-        <View style={styles.dropletNameText}>
-          <Text style={styles.dropletNameText}>
-            {droplet.name}
-          </Text>
-        </View>
-      </View>
+      <Droplet
+        key={droplet.id}
+        droplet={droplet}
+        selectedDroplet={selectedDroplet}
+        onPressDroplet={setSelectedDroplet}
+        onPressDeleteDroplet={onPressDeleteDroplet}
+        onPressSnapshotDroplet={onPressSnapshotDroplet}
+      />
+    )
+  }
+
+  renderSnapshot = snapshot => {
+    const {
+      selectedSnapshot,
+      setSelectedSnapshot,
+    } = this.context
+
+    const { onPressDeleteSnapshot } = this
+
+    return (
+      <Snapshot
+        key={snapshot.id}
+        snapshot={snapshot}
+        selectedSnapshot={selectedSnapshot}
+        onPressSnapshot={setSelectedSnapshot}
+        onPressDeleteSnapshot={onPressDeleteSnapshot}
+      />
     )
   }
 }

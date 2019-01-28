@@ -46,9 +46,13 @@ const request = async (token, method, url, data = {}) => {
 class App extends Component {
   state = {
     screen: "Connect",
-    setScreen: screen => this.setState({ screen }),
+    setScreen: screen => {
+      this.setState({ screen })
+    },
     token: undefined,
-    setToken: token => this.setState({ token }),
+    setToken: token => {
+      this.setState({ token })
+    },
     droplets: [],
     isLoadingDroplets: false,
     getDroplets: async () => {
@@ -68,6 +72,34 @@ class App extends Component {
         droplets: result.droplets,
         isLoadingDroplets: false,
       })
+    },
+    selectedDroplet: undefined,
+    setSelectedDroplet: selectedDroplet => {
+      this.setState({ selectedDroplet })
+    },
+    snapshots: [],
+    isLoadingSnapshots: false,
+    getSnapshots: async () => {
+      const { token } = this.state
+
+      this.setState({ isLoadingSnapshots: true })
+
+      const response = await request(
+        token,
+        "GET",
+        "https://api.digitalocean.com/v2/snapshots",
+      )
+
+      const result = await response.json()
+
+      this.setState({
+        snapshots: result.snapshots,
+        isLoadingSnapshots: false,
+      })
+    },
+    selectedSnapshot: undefined,
+    setSelectedSnapshot: selectedSnapshot => {
+      this.setState({ selectedSnapshot })
     },
   }
 
