@@ -34,12 +34,14 @@ class Overview extends Component {
   }
 
   onPressDeleteDroplet = droplet => {
+    const { deleteDroplet } = this.context
+
     const name = droplet.name
 
     confirm(
       `Delete ${name}`,
       `Are you sure you want to delete ${name}?`,
-      () => alert("<delete>"),
+      () => deleteDroplet(droplet),
     )
   }
 
@@ -49,12 +51,14 @@ class Overview extends Component {
   }
 
   onPressDeleteSnapshot = snapshot => {
+    const { deleteSnapshot } = this.context
+
     const name = snapshot.name
 
     confirm(
       `Delete ${name}`,
       `Are you sure you want to delete ${name}?`,
-      () => alert("<delete>"),
+      () => deleteSnapshot(snapshot),
     )
   }
 

@@ -12,24 +12,30 @@ const DropletSnapshotPrompt = ({
   onChangeText,
   onCancel,
   onSubmit,
-}) => (
-  <Dialog.Container visible={isVisible}>
-    <Dialog.Title>{title}</Dialog.Title>
-    <Dialog.Description>{description}</Dialog.Description>
-    <Dialog.Input
-      defaultValue={defaultValue}
-      onChangeText={onChangeText}
-    />
-    <Dialog.Button
-      label={cancelButtonText}
-      onPress={onCancel}
-    />
-    <Dialog.Button
-      label={submitButtonText}
-      onPress={onSubmit}
-    />
-  </Dialog.Container>
-)
+}) => {
+  if (onChangeText) {
+    onChangeText(defaultValue)
+  }
+
+  return (
+    <Dialog.Container visible={isVisible}>
+      <Dialog.Title>{title}</Dialog.Title>
+      <Dialog.Description>{description}</Dialog.Description>
+      <Dialog.Input
+        defaultValue={defaultValue}
+        onChangeText={onChangeText}
+      />
+      <Dialog.Button
+        label={cancelButtonText}
+        onPress={onCancel}
+      />
+      <Dialog.Button
+        label={submitButtonText}
+        onPress={onSubmit}
+      />
+    </Dialog.Container>
+  )
+}
 
 DropletSnapshotPrompt.propTypes = {
   title: PropTypes.string,

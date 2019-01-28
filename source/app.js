@@ -129,9 +129,31 @@ class App extends Component {
         },
       )
 
-      const result = await response.json()
+      await response.json()
+    },
+    deleteSnapshot: async snapshot => {
+      const { token, getSnapshots } = this.state
 
-      console.log("(mint)", JSON.stringify(result))
+      await request(
+        token,
+        "DELETE",
+        `${DO_PREFIX}/snapshots/${snapshot.id}`,
+      )
+
+      // ...refresh the list
+      await getSnapshots()
+    },
+    deleteDroplet: async droplet => {
+      const { token, getDroplets } = this.state
+
+      await request(
+        token,
+        "DELETE",
+        `${DO_PREFIX}/droplets/${droplet.id}`,
+      )
+
+      // ...refresh the list
+      await getDroplets()
     },
   }
 
@@ -174,7 +196,9 @@ class App extends Component {
                 isCreatingSnapshotOf,
                 this.snapshotName,
               )
+
               setIsCreatingSnapshotOf(undefined)
+              this.snapshotName = ""
             }}
           />
         </Context.Provider>
