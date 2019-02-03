@@ -212,6 +212,10 @@ class App extends Component {
 
       setScreen("Overview")
     },
+    dropletAddress: undefined,
+    setDropletAddress: dropletAddress => {
+      this.setState({ dropletAddress })
+    },
   }
 
   async componentDidMount() {

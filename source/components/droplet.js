@@ -10,6 +10,7 @@ const Droplet = ({
   onPressDroplet,
   onPressDeleteDroplet,
   onPressSnapshotDroplet,
+  onPressConnectDroplet,
 }) => {
   return (
     <Block
@@ -26,6 +27,7 @@ const Droplet = ({
         selectedDroplet={selectedDroplet}
         onPressDeleteDroplet={onPressDeleteDroplet}
         onPressSnapshotDroplet={onPressSnapshotDroplet}
+        onPressConnectDroplet={onPressConnectDroplet}
       />
     </Block>
   )
@@ -37,6 +39,7 @@ Droplet.propTypes = {
   onPressDroplet: PropTypes.func,
   onPressDeleteDroplet: PropTypes.func,
   onPressSnapshotDroplet: PropTypes.func,
+  onPressConnectDroplet: PropTypes.func,
 }
 
 Droplet.defaultProps = {
@@ -44,6 +47,7 @@ Droplet.defaultProps = {
   onPressDroplet: () => null,
   onPressDeleteDroplet: () => null,
   onPressSnapshotDroplet: () => null,
+  onPressConnectDroplet: () => null,
 }
 
 export { Droplet }

@@ -1,0 +1,620 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		018CDC36803975EA6A1D9FFA771511F6 /* NMSSHSessionDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D87ECA6B4B752488E1D16FB956AE930 /* NMSSHSessionDelegate.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		047C6F3D2F970C34D04308A54F35274C /* socket_helper.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F78BDBAD620CC0A37818988BD36CA1F /* socket_helper.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		18B9F9F34E2C07E32E450391CAED87BE /* NMSSH.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E49CEF4BF595B3A4170DB9CF8B017F4 /* NMSSH.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		23557E3E4F5D75F7986F37E75495BEC8 /* NMSSHConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E6DF526D44123C3367E76930018A1DD /* NMSSHConfig.m */; };
+		346618ECC7E32507BCE64E69BA790553 /* libssh2.h in Headers */ = {isa = PBXBuildFile; fileRef = 359529AAB778493B57A8FBD265336727 /* libssh2.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		355070752AC062601BD6E76E4F27D1A1 /* socket_helper.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1E27F57731A0AF1BA5F759C13AA0D7 /* socket_helper.m */; };
+		5B149328D444DB70CBA65AC1BB7FC668 /* NMSFTP.m in Sources */ = {isa = PBXBuildFile; fileRef = 33808027DE74449675C5821B557DF171 /* NMSFTP.m */; };
+		60CE292E06C38BD1A300EDE4E73875D7 /* NMSSHConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BEC02DAAE8B308C09A9E3822F755E38 /* NMSSHConfig.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		7227EE89393E8BE62A7F8447AD752E0C /* NMSFTPFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FCBD18A06B4DD8942B63D9B050679B2 /* NMSFTPFile.m */; };
+		820B72F24DC70F129C18C7269B922909 /* libssh2_publickey.h in Headers */ = {isa = PBXBuildFile; fileRef = A12B01B2F1A5641E41927299819F3545 /* libssh2_publickey.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		8ACAE1983E13990D7D6C08A31DEABC6B /* Pods-Developmint-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B741AE9A449F7649220B5AD7821086 /* Pods-Developmint-dummy.m */; };
+		9B45364FA92DF605D818F73FA15F13E6 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 761D18772256A8D99352837C3233ED78 /* CFNetwork.framework */; };
+		9C2185A0851E4CB05E51AF5C81233B3B /* NMSSHChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 58EDFA047044592492D81DC2177E4AA9 /* NMSSHChannel.m */; };
+		9C2D5898B9C0EA4F5BD5EF23B701D184 /* NMSSHSession.h in Headers */ = {isa = PBXBuildFile; fileRef = EE1CA950BCC26E158A8A6B40AC83C281 /* NMSSHSession.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		9EF76C3E39EB63264E26B32F10929F06 /* libssh2_sftp.h in Headers */ = {isa = PBXBuildFile; fileRef = 50F67337EAC52872A1F36D520AF99AFB /* libssh2_sftp.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		9F69BF9401AF4B3ECC57044F7BDD5788 /* NMSSH.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F4F1DC0BB560DF3371444484CA39BF3 /* NMSSH.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A1ED1A9DCA74DD8DE85189E40D2DDE59 /* NMSSHChannel.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F2E5F482BFA537B495AD23D14A94584 /* NMSSHChannel.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A9370B683DF771A32068DFDBF69B82E2 /* NMSSHSession.m in Sources */ = {isa = PBXBuildFile; fileRef = C236E2FF8F45EF55F3F07699363402A7 /* NMSSHSession.m */; };
+		AE00E443F955BF209F3B922186EFD875 /* NMSSHHostConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DD55F815D18C0A4CFB8E226B45C5A0D /* NMSSHHostConfig.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		CCF32EF74235E6D24F18F48A5E5678D1 /* NMSFTP.h in Headers */ = {isa = PBXBuildFile; fileRef = EA197DCB94A897B1BE1934C84FA6A38E /* NMSFTP.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		D31A7904D1210D50685FF29987E41B80 /* NMSSHChannelDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = EB8945EA40C6E902DF792E4AFC54B96D /* NMSSHChannelDelegate.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		D8A7D49FBC81FFA4493C9169D7D15315 /* NMSSH+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F49690757237D44AC118229812AC7D6 /* NMSSH+Protected.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		E27E96D36E2D47FC45DEBD741F6C8A06 /* NMSSH-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2CDC6125C082E17B90790AD6A6F347 /* NMSSH-dummy.m */; };
+		E46AE53E15A02FD6924922B6E6CD7011 /* NMSFTPFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 10EF830F9E162D6B0B59111AF90D5172 /* NMSFTPFile.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		EDF28EA71CD5099450D1FC0F79CE520D /* NMSSHLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = B90EA2DCB381225A01D4621710AE99E2 /* NMSSHLogger.m */; };
+		EF46DDC13D0A82204E5D759783E53A2C /* NMSSHHostConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F98422B3379DC772EF1FEC59AC807E /* NMSSHHostConfig.m */; };
+		FC0B767BB17D7E38260FF3E76BEA7FB4 /* NMSSHLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 675CFD701BBD8DF9BE16CB1550FF70A5 /* NMSSHLogger.h */; settings = {ATTRIBUTES = (Project, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		77AED41F2EEA141C15925D5348E69E25 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 68275CA7D9FFC200AF4A6E8DA0DC0D08;
+			remoteInfo = NMSSH;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0340995304DD8B15DBE4421F3880D981 /* Pods-Developmint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Developmint.release.xcconfig"; sourceTree = "<group>"; };
+		0F396B1994D6329E1FB2482A0246DADB /* Pods-Developmint-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Developmint-resources.sh"; sourceTree = "<group>"; };
+		10EF830F9E162D6B0B59111AF90D5172 /* NMSFTPFile.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NMSFTPFile.h; path = NMSSH/NMSFTPFile.h; sourceTree = "<group>"; };
+		24390EFD555DD124430DFF9724065945 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		2BEC02DAAE8B308C09A9E3822F755E38 /* NMSSHConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NMSSHConfig.h; path = NMSSH/NMSSHConfig.h; sourceTree = "<group>"; };
+		33808027DE74449675C5821B557DF171 /* NMSFTP.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NMSFTP.m; path = NMSSH/NMSFTP.m; sourceTree = "<group>"; };
+		359529AAB778493B57A8FBD265336727 /* libssh2.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = libssh2.h; path = "NMSSH-iOS/Libraries/include/libssh2/libssh2.h"; sourceTree = "<group>"; };
+		3F4F1DC0BB560DF3371444484CA39BF3 /* NMSSH.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NMSSH.h; path = "NMSSH-iOS/NMSSH.h"; sourceTree = "<group>"; };
+		4DD55F815D18C0A4CFB8E226B45C5A0D /* NMSSHHostConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NMSSHHostConfig.h; path = NMSSH/NMSSHHostConfig.h; sourceTree = "<group>"; };
+		50F67337EAC52872A1F36D520AF99AFB /* libssh2_sftp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = libssh2_sftp.h; path = "NMSSH-iOS/Libraries/include/libssh2/libssh2_sftp.h"; sourceTree = "<group>"; };
+		57E2C4FCF892EA525903DFDDFDA1BED2 /* NMSSH.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NMSSH.xcconfig; sourceTree = "<group>"; };
+		58EDFA047044592492D81DC2177E4AA9 /* NMSSHChannel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NMSSHChannel.m; path = NMSSH/NMSSHChannel.m; sourceTree = "<group>"; };
+		5E49CEF4BF595B3A4170DB9CF8B017F4 /* NMSSH.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NMSSH.h; path = NMSSH/NMSSH.h; sourceTree = "<group>"; };
+		675CFD701BBD8DF9BE16CB1550FF70A5 /* NMSSHLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NMSSHLogger.h; path = NMSSH/Config/NMSSHLogger.h; sourceTree = "<group>"; };
+		6FCBD18A06B4DD8942B63D9B050679B2 /* NMSFTPFile.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NMSFTPFile.m; path = NMSSH/NMSFTPFile.m; sourceTree = "<group>"; };
+		761D18772256A8D99352837C3233ED78 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
+		7D87ECA6B4B752488E1D16FB956AE930 /* NMSSHSessionDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NMSSHSessionDelegate.h; path = NMSSH/Protocols/NMSSHSessionDelegate.h; sourceTree = "<group>"; };
+		7F2E5F482BFA537B495AD23D14A94584 /* NMSSHChannel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NMSSHChannel.h; path = NMSSH/NMSSHChannel.h; sourceTree = "<group>"; };
+		7F78BDBAD620CC0A37818988BD36CA1F /* socket_helper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = socket_helper.h; path = NMSSH/Config/socket_helper.h; sourceTree = "<group>"; };
+		877A84EFE1BE839D747683F01E666663 /* Pods-Developmint-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Developmint-acknowledgements.plist"; sourceTree = "<group>"; };
+		8F49690757237D44AC118229812AC7D6 /* NMSSH+Protected.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NMSSH+Protected.h"; path = "NMSSH/Config/NMSSH+Protected.h"; sourceTree = "<group>"; };
+		97E28928D641AAAA32C73D74934D0EAC /* libssl.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libssl.a; path = "NMSSH-iOS/Libraries/lib/libssl.a"; sourceTree = "<group>"; };
+		9E2CDC6125C082E17B90790AD6A6F347 /* NMSSH-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NMSSH-dummy.m"; sourceTree = "<group>"; };
+		9E6DF526D44123C3367E76930018A1DD /* NMSSHConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NMSSHConfig.m; path = NMSSH/NMSSHConfig.m; sourceTree = "<group>"; };
+		A12B01B2F1A5641E41927299819F3545 /* libssh2_publickey.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = libssh2_publickey.h; path = "NMSSH-iOS/Libraries/include/libssh2/libssh2_publickey.h"; sourceTree = "<group>"; };
+		AA1E27F57731A0AF1BA5F759C13AA0D7 /* socket_helper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = socket_helper.m; path = NMSSH/Config/socket_helper.m; sourceTree = "<group>"; };
+		AB9395572F33F73B15E076891CFFA94B /* libNMSSH.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libNMSSH.a; path = libNMSSH.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B90EA2DCB381225A01D4621710AE99E2 /* NMSSHLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NMSSHLogger.m; path = NMSSH/Config/NMSSHLogger.m; sourceTree = "<group>"; };
+		C1F98422B3379DC772EF1FEC59AC807E /* NMSSHHostConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NMSSHHostConfig.m; path = NMSSH/NMSSHHostConfig.m; sourceTree = "<group>"; };
+		C236E2FF8F45EF55F3F07699363402A7 /* NMSSHSession.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NMSSHSession.m; path = NMSSH/NMSSHSession.m; sourceTree = "<group>"; };
+		C518DFED5FB94B9386335981E52815EE /* libcrypto.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libcrypto.a; path = "NMSSH-iOS/Libraries/lib/libcrypto.a"; sourceTree = "<group>"; };
+		DB2970742B69BC691E78445C53CA238F /* libssh2.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libssh2.a; path = "NMSSH-iOS/Libraries/lib/libssh2.a"; sourceTree = "<group>"; };
+		E39A6D34439B6CFA248CA9DB6499240D /* Pods-Developmint-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Developmint-acknowledgements.markdown"; sourceTree = "<group>"; };
+		EA197DCB94A897B1BE1934C84FA6A38E /* NMSFTP.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NMSFTP.h; path = NMSSH/NMSFTP.h; sourceTree = "<group>"; };
+		EB8945EA40C6E902DF792E4AFC54B96D /* NMSSHChannelDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NMSSHChannelDelegate.h; path = NMSSH/Protocols/NMSSHChannelDelegate.h; sourceTree = "<group>"; };
+		ED4D8CA1876D1CF290E90A244A40006F /* NMSSH-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NMSSH-prefix.pch"; sourceTree = "<group>"; };
+		EE1CA950BCC26E158A8A6B40AC83C281 /* NMSSHSession.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NMSSHSession.h; path = NMSSH/NMSSHSession.h; sourceTree = "<group>"; };
+		F0B741AE9A449F7649220B5AD7821086 /* Pods-Developmint-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Developmint-dummy.m"; sourceTree = "<group>"; };
+		F6537EC53DD080F29CCD08AC57C42F81 /* Pods-Developmint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Developmint.debug.xcconfig"; sourceTree = "<group>"; };
+		FD485FDA5F42717697001BFADD5561DC /* libPods-Developmint.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-Developmint.a"; path = "libPods-Developmint.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF0BF8FB72545A965353EA32305ADE6F /* Pods-Developmint-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Developmint-frameworks.sh"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		354E9FD068595607AB6FBEC43342C3B0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D7094E8A00483429B447D3A0C33A8A6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B45364FA92DF605D818F73FA15F13E6 /* CFNetwork.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0FBD5C6924BC015957DDA65FAB19EBC5 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				761D18772256A8D99352837C3233ED78 /* CFNetwork.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		5DDD481E998FABB0833FCDD144652977 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E11626D2869C461779DD9C1EFCE41BA5 /* Pods-Developmint */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		6282752ECF29C45F6A45D66B6575952E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AB9395572F33F73B15E076891CFFA94B /* libNMSSH.a */,
+				FD485FDA5F42717697001BFADD5561DC /* libPods-Developmint.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CD460DBDBBBB87983A90ECBFD0EB6719 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F8C467E9745FD8DB656405430BBF6C6D /* NMSSH */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				24390EFD555DD124430DFF9724065945 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				CD460DBDBBBB87983A90ECBFD0EB6719 /* Pods */,
+				6282752ECF29C45F6A45D66B6575952E /* Products */,
+				5DDD481E998FABB0833FCDD144652977 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0FBD5C6924BC015957DDA65FAB19EBC5 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E11626D2869C461779DD9C1EFCE41BA5 /* Pods-Developmint */ = {
+			isa = PBXGroup;
+			children = (
+				E39A6D34439B6CFA248CA9DB6499240D /* Pods-Developmint-acknowledgements.markdown */,
+				877A84EFE1BE839D747683F01E666663 /* Pods-Developmint-acknowledgements.plist */,
+				F0B741AE9A449F7649220B5AD7821086 /* Pods-Developmint-dummy.m */,
+				FF0BF8FB72545A965353EA32305ADE6F /* Pods-Developmint-frameworks.sh */,
+				0F396B1994D6329E1FB2482A0246DADB /* Pods-Developmint-resources.sh */,
+				F6537EC53DD080F29CCD08AC57C42F81 /* Pods-Developmint.debug.xcconfig */,
+				0340995304DD8B15DBE4421F3880D981 /* Pods-Developmint.release.xcconfig */,
+			);
+			name = "Pods-Developmint";
+			path = "Target Support Files/Pods-Developmint";
+			sourceTree = "<group>";
+		};
+		F0DB6939EF465980F72D310A2993E5BC /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				57E2C4FCF892EA525903DFDDFDA1BED2 /* NMSSH.xcconfig */,
+				9E2CDC6125C082E17B90790AD6A6F347 /* NMSSH-dummy.m */,
+				ED4D8CA1876D1CF290E90A244A40006F /* NMSSH-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/NMSSH";
+			sourceTree = "<group>";
+		};
+		F8410CDEDECC6BD9649585B5EDFC06FD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C518DFED5FB94B9386335981E52815EE /* libcrypto.a */,
+				DB2970742B69BC691E78445C53CA238F /* libssh2.a */,
+				97E28928D641AAAA32C73D74934D0EAC /* libssl.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F8C467E9745FD8DB656405430BBF6C6D /* NMSSH */ = {
+			isa = PBXGroup;
+			children = (
+				359529AAB778493B57A8FBD265336727 /* libssh2.h */,
+				A12B01B2F1A5641E41927299819F3545 /* libssh2_publickey.h */,
+				50F67337EAC52872A1F36D520AF99AFB /* libssh2_sftp.h */,
+				EA197DCB94A897B1BE1934C84FA6A38E /* NMSFTP.h */,
+				33808027DE74449675C5821B557DF171 /* NMSFTP.m */,
+				10EF830F9E162D6B0B59111AF90D5172 /* NMSFTPFile.h */,
+				6FCBD18A06B4DD8942B63D9B050679B2 /* NMSFTPFile.m */,
+				3F4F1DC0BB560DF3371444484CA39BF3 /* NMSSH.h */,
+				5E49CEF4BF595B3A4170DB9CF8B017F4 /* NMSSH.h */,
+				8F49690757237D44AC118229812AC7D6 /* NMSSH+Protected.h */,
+				7F2E5F482BFA537B495AD23D14A94584 /* NMSSHChannel.h */,
+				58EDFA047044592492D81DC2177E4AA9 /* NMSSHChannel.m */,
+				EB8945EA40C6E902DF792E4AFC54B96D /* NMSSHChannelDelegate.h */,
+				2BEC02DAAE8B308C09A9E3822F755E38 /* NMSSHConfig.h */,
+				9E6DF526D44123C3367E76930018A1DD /* NMSSHConfig.m */,
+				4DD55F815D18C0A4CFB8E226B45C5A0D /* NMSSHHostConfig.h */,
+				C1F98422B3379DC772EF1FEC59AC807E /* NMSSHHostConfig.m */,
+				675CFD701BBD8DF9BE16CB1550FF70A5 /* NMSSHLogger.h */,
+				B90EA2DCB381225A01D4621710AE99E2 /* NMSSHLogger.m */,
+				EE1CA950BCC26E158A8A6B40AC83C281 /* NMSSHSession.h */,
+				C236E2FF8F45EF55F3F07699363402A7 /* NMSSHSession.m */,
+				7D87ECA6B4B752488E1D16FB956AE930 /* NMSSHSessionDelegate.h */,
+				7F78BDBAD620CC0A37818988BD36CA1F /* socket_helper.h */,
+				AA1E27F57731A0AF1BA5F759C13AA0D7 /* socket_helper.m */,
+				F8410CDEDECC6BD9649585B5EDFC06FD /* Frameworks */,
+				F0DB6939EF465980F72D310A2993E5BC /* Support Files */,
+			);
+			name = NMSSH;
+			path = NMSSH;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		46CAC23B0755864816C8EBF4AE554EDF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52BF146B27EDE650C7172A4B49562CE4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				346618ECC7E32507BCE64E69BA790553 /* libssh2.h in Headers */,
+				820B72F24DC70F129C18C7269B922909 /* libssh2_publickey.h in Headers */,
+				9EF76C3E39EB63264E26B32F10929F06 /* libssh2_sftp.h in Headers */,
+				CCF32EF74235E6D24F18F48A5E5678D1 /* NMSFTP.h in Headers */,
+				E46AE53E15A02FD6924922B6E6CD7011 /* NMSFTPFile.h in Headers */,
+				D8A7D49FBC81FFA4493C9169D7D15315 /* NMSSH+Protected.h in Headers */,
+				9F69BF9401AF4B3ECC57044F7BDD5788 /* NMSSH.h in Headers */,
+				18B9F9F34E2C07E32E450391CAED87BE /* NMSSH.h in Headers */,
+				A1ED1A9DCA74DD8DE85189E40D2DDE59 /* NMSSHChannel.h in Headers */,
+				D31A7904D1210D50685FF29987E41B80 /* NMSSHChannelDelegate.h in Headers */,
+				60CE292E06C38BD1A300EDE4E73875D7 /* NMSSHConfig.h in Headers */,
+				AE00E443F955BF209F3B922186EFD875 /* NMSSHHostConfig.h in Headers */,
+				FC0B767BB17D7E38260FF3E76BEA7FB4 /* NMSSHLogger.h in Headers */,
+				9C2D5898B9C0EA4F5BD5EF23B701D184 /* NMSSHSession.h in Headers */,
+				018CDC36803975EA6A1D9FFA771511F6 /* NMSSHSessionDelegate.h in Headers */,
+				047C6F3D2F970C34D04308A54F35274C /* socket_helper.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		68275CA7D9FFC200AF4A6E8DA0DC0D08 /* NMSSH */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 509C3834D479FF7F14538A45559F7F4A /* Build configuration list for PBXNativeTarget "NMSSH" */;
+			buildPhases = (
+				52BF146B27EDE650C7172A4B49562CE4 /* Headers */,
+				A5D779B73523775A5E20BC6915A404A6 /* Sources */,
+				3D7094E8A00483429B447D3A0C33A8A6 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NMSSH;
+			productName = NMSSH;
+			productReference = AB9395572F33F73B15E076891CFFA94B /* libNMSSH.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		99D521C6A6D852EF5B8DAC8EC7D365CD /* Pods-Developmint */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9280ADB5523B9279AB5DAE3B17755F03 /* Build configuration list for PBXNativeTarget "Pods-Developmint" */;
+			buildPhases = (
+				46CAC23B0755864816C8EBF4AE554EDF /* Headers */,
+				C0600DC117FC1231D6ECAEA64A2DD367 /* Sources */,
+				354E9FD068595607AB6FBEC43342C3B0 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BBA26A216F9B9377A069B2868B07BA01 /* PBXTargetDependency */,
+			);
+			name = "Pods-Developmint";
+			productName = "Pods-Developmint";
+			productReference = FD485FDA5F42717697001BFADD5561DC /* libPods-Developmint.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 6282752ECF29C45F6A45D66B6575952E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				68275CA7D9FFC200AF4A6E8DA0DC0D08 /* NMSSH */,
+				99D521C6A6D852EF5B8DAC8EC7D365CD /* Pods-Developmint */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A5D779B73523775A5E20BC6915A404A6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B149328D444DB70CBA65AC1BB7FC668 /* NMSFTP.m in Sources */,
+				7227EE89393E8BE62A7F8447AD752E0C /* NMSFTPFile.m in Sources */,
+				E27E96D36E2D47FC45DEBD741F6C8A06 /* NMSSH-dummy.m in Sources */,
+				9C2185A0851E4CB05E51AF5C81233B3B /* NMSSHChannel.m in Sources */,
+				23557E3E4F5D75F7986F37E75495BEC8 /* NMSSHConfig.m in Sources */,
+				EF46DDC13D0A82204E5D759783E53A2C /* NMSSHHostConfig.m in Sources */,
+				EDF28EA71CD5099450D1FC0F79CE520D /* NMSSHLogger.m in Sources */,
+				A9370B683DF771A32068DFDBF69B82E2 /* NMSSHSession.m in Sources */,
+				355070752AC062601BD6E76E4F27D1A1 /* socket_helper.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0600DC117FC1231D6ECAEA64A2DD367 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8ACAE1983E13990D7D6C08A31DEABC6B /* Pods-Developmint-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BBA26A216F9B9377A069B2868B07BA01 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = NMSSH;
+			target = 68275CA7D9FFC200AF4A6E8DA0DC0D08 /* NMSSH */;
+			targetProxy = 77AED41F2EEA141C15925D5348E69E25 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3073E9329E3D859060CB4B679A6C557C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		59440EF470B71B9DC93C7373FDA12B08 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6537EC53DD080F29CCD08AC57C42F81 /* Pods-Developmint.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9BFAFFFA6EE2910F117BAB515410A7FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57E2C4FCF892EA525903DFDDFDA1BED2 /* NMSSH.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/NMSSH/NMSSH-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = NMSSH;
+				PRODUCT_NAME = NMSSH;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E2CD8EA8A0F2410BE42113D3AA1CD158 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57E2C4FCF892EA525903DFDDFDA1BED2 /* NMSSH.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/NMSSH/NMSSH-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = NMSSH;
+				PRODUCT_NAME = NMSSH;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E728C0BD3857BC99A5D2AD6ACDFBA09A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		FBC0574B58235FA1E096308269A523F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0340995304DD8B15DBE4421F3880D981 /* Pods-Developmint.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E728C0BD3857BC99A5D2AD6ACDFBA09A /* Debug */,
+				3073E9329E3D859060CB4B679A6C557C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		509C3834D479FF7F14538A45559F7F4A /* Build configuration list for PBXNativeTarget "NMSSH" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2CD8EA8A0F2410BE42113D3AA1CD158 /* Debug */,
+				9BFAFFFA6EE2910F117BAB515410A7FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9280ADB5523B9279AB5DAE3B17755F03 /* Build configuration list for PBXNativeTarget "Pods-Developmint" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59440EF470B71B9DC93C7373FDA12B08 /* Debug */,
+				FBC0574B58235FA1E096308269A523F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

@@ -10,6 +10,7 @@ const DropletActions = ({
   selectedDroplet,
   onPressDeleteDroplet,
   onPressSnapshotDroplet,
+  onPressConnectDroplet,
 }) => {
   if (selectedDroplet != droplet) {
     return null
@@ -27,6 +28,11 @@ const DropletActions = ({
       >
         {Icons.camera}
       </IconButton>
+      <IconButton
+        onPress={() => onPressConnectDroplet(droplet)}
+      >
+        {Icons.plug}
+      </IconButton>
     </Actions>
   )
 }
@@ -36,12 +42,14 @@ DropletActions.propTypes = {
   selectedDroplet: PropTypes.object,
   onPressDeleteDroplet: PropTypes.func,
   onPressSnapshotDroplet: PropTypes.func,
+  onPressConnectDroplet: PropTypes.func,
 }
 
 DropletActions.defaultProps = {
   selectedDroplet: undefined,
   onPressDeleteDroplet: () => null,
   onPressSnapshotDroplet: () => null,
+  onPressConnectDroplet: () => null,
 }
 
 export { DropletActions }

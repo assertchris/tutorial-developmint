@@ -4583,6 +4583,11 @@ react-native-modal@^6.4.0:
     prop-types "^15.6.1"
     react-native-animatable "^1.2.4"
 
+react-native-ssh-sftp@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/react-native-ssh-sftp/-/react-native-ssh-sftp-1.0.3.tgz#42c4a0e5c12d3c64cec605ded62dabd83253794d"
+  integrity sha1-QsSg5cEtPGTOxgXe1i2r2DJTeU0=
+
 react-native@0.58.1:
   version "0.58.1"
   resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.58.1.tgz#3cc0563d315d0fc605f6bae341fb952e119d31c3"

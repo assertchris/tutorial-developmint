@@ -69,6 +69,17 @@ class Overview extends Component {
     setScreen("CreateDroplet")
   }
 
+  onPressConnectDroplet = droplet => {
+    const { setDropletAddress, setScreen } = this.context
+
+    const address = droplet.networks.v4.find(
+      network => network.type === "public",
+    )
+
+    setDropletAddress(address.ip_address)
+    setScreen("ConnectToDroplet")
+  }
+
   render() {
     const {
       droplets,
@@ -114,6 +125,7 @@ class Overview extends Component {
     const {
       onPressDeleteDroplet,
       onPressSnapshotDroplet,
+      onPressConnectDroplet,
     } = this
 
     return (
@@ -124,6 +136,7 @@ class Overview extends Component {
         onPressDroplet={setSelectedDroplet}
         onPressDeleteDroplet={onPressDeleteDroplet}
         onPressSnapshotDroplet={onPressSnapshotDroplet}
+        onPressConnectDroplet={onPressConnectDroplet}
       />
     )
   }
